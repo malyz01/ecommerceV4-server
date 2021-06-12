@@ -9,11 +9,11 @@
     "postinstall": "npm run migrate",
     "db:up": "docker-compose -f ./docker/dbs.yml up -d",
     "db:down": "docker-compose -f ./docker/dbs.yml down",
-    "rollback": "sequelize-cli db:migrate:undo:all",
     "migrate": "sequelize-cli db:migrate",
+    "rbmigrate": "sequelize-cli db:migrate:undo:all",
     "seed": "sequelize-cli db:seed:all",
     "rbseed": "sequelize-cli db:seed:undo:all",
-    "reset": "run-s rollback migrate seed"
+    "reset": "run-s rbmigrate migrate seed"
   },
   "author": "Malyz",
   "license": "ISC",
