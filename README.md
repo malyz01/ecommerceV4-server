@@ -1,19 +1,16 @@
-## Penny Wise v2 ( in Development )
+## E-Commerce v4 ( in Development )
 
 ### Stack
 
-- React (Typescript)
+- React
 - Node JS
 - Express JS
 - Postgres (Sequelize)
 - GraphQL
-- Material UI
 
 ### Features
 
-- Track your Income and Expense.
-- Calculate for your weekly budget.
-- Create goals and let our system calculate how much money you need to save weekly, monthly and annually.
+-
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -160,10 +157,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 
 ## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
 <!-- ACKNOWLEDGEMENTS -->
 
