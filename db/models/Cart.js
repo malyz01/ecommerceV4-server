@@ -19,8 +19,7 @@ const Cart = db.sequelize.define(
         key: 'id',
         deferrable: db.Sequelize.Deferrable.INITIALLY_IMMEDIATE
       }
-    },
-    type: db.Sequelize.STRING
+    }
   },
   {
     freezeTableName: true,

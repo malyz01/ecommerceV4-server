@@ -21,6 +21,11 @@ module.exports = {
           }
         },
         orderNo: { type: Sequelize.INTEGER, autoIncrement: true },
+        status: {
+          type: Sequelize.ENUM,
+          allowNull: false,
+          values: ['pending', 'completed', 'cancelled']
+        },
         createdAt: Sequelize.DATE,
         updatedAt: Sequelize.DATE
       },

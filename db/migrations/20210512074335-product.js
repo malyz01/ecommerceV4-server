@@ -8,13 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.UUID
       },
-      cartId: {
-        type: Sequelize.UUID,
-        references: {
-          model: 'Cart',
-          key: 'id'
-        }
-      },
       productCode: { type: Sequelize.STRING, allowNull: false, unique: true },
       name: { type: Sequelize.STRING, allowNull: false },
       price: { type: Sequelize.DECIMAL, allowNull: false },
@@ -39,6 +32,7 @@ module.exports = {
         allowNull: false,
         defaultValue: 0
       },
+      description: Sequelize.STRING,
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE
     });

@@ -1,7 +1,6 @@
 const { v4: uuid } = require('uuid');
 
 const { sequelize, Sequelize } = require('../index');
-const Cart = require('./Cart');
 
 const Product = sequelize.define(
   'Product',
@@ -10,14 +9,6 @@ const Product = sequelize.define(
       type: Sequelize.UUID,
       defaultValue: () => uuid(),
       primaryKey: true
-    },
-    cartId: {
-      type: Sequelize.UUID,
-      references: {
-        model: Cart,
-        key: 'id',
-        deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-      }
     },
     productCode: { type: Sequelize.STRING, allowNull: false, unique: true },
     name: { type: Sequelize.STRING, allowNull: false },
@@ -38,7 +29,8 @@ const Product = sequelize.define(
       allowNull: false,
       values: ['xs', 's', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl']
     },
-    stock: { type: Sequelize.INTEGER, allowNull: false, defaultValue: 0 }
+    stock: { type: Sequelize.INTEGER, allowNull: false, defaultValue: 0 },
+    description: Sequelize.STRING
   },
   {
     freezeTableName: true,
