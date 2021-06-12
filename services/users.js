@@ -4,7 +4,7 @@ const User = require('../db/models/User');
 const Profile = require('../db/models/Profile');
 
 // GraphQL params
-// (parent, arg, context) => {}
+// (parent, args, context, info) => {}
 
 exports.fetchAll = () => User.findAll();
 

@@ -1,7 +1,7 @@
 const Profile = require('../db/models/Profile');
 
 // GraphQL params
-// (parent, arg, context) => {}
+// (parent, args, context, info) => {}
 
 exports.create = (_, arg) => Profile.create(arg.userProfile);
 
