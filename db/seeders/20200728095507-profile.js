@@ -3,7 +3,7 @@ const { v4: uuid } = require('uuid');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('profiles', [
+    await queryInterface.bulkInsert('Profile', [
       {
         id: uuid(),
         userId: 'de65d050-4e0e-4a79-8063-74e7b9e53dd4',
