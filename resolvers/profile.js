@@ -1,15 +1,11 @@
-const db = require('../db/controller');
+const db = require('../services');
 
 module.exports = {
   Query: {
-    profiles: () => db.profileFetchAll(),
-    profile: (_, arg, context) => {
-      return db.profileFetch(arg.id);
-    }
+    profiles: db.Profile.fetchAll,
+    profile: db.Profile.fetch
   },
   Mutation: {
-    createUserProfile: (root, { userProfile }) => {
-      return db.profileCreate(userProfile);
-    }
+    createUserProfile: db.Profile.create
   }
 };

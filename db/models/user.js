@@ -1,53 +1,48 @@
-'use strict';
-const { Model } = require('sequelize');
 const bcrypt = require('bcrypt');
+const db = require('../index');
 
-module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
-    static associate(models) {
-      User.hasOne(models.profile);
-    }
-  }
-
-  User.init(
-    {
-      id: {
-        allowNull: false,
-        primaryKey: true,
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4
-      },
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
-      createdAt: DataTypes.DATE,
-      updatedAt: DataTypes.DATE
+const User = db.sequelize.define(
+  'User',
+  {
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      type: db.Sequelize.UUID,
+      defaultValue: db.Sequelize.UUIDV4
     },
-    {
-      hooks: {
-        beforeCreate: async (user) => {
+    email: db.Sequelize.STRING,
+    password: db.Sequelize.STRING,
+    role: {
+      type: db.Sequelize.ENUM,
+      values: ['admin', 'basic']
+    }
+  },
+  {
+    freezeTableName: true,
+    timestamps: true,
+    hooks: {
+      beforeCreate: async (user) => {
+        const hashPassword = await bcrypt.hash(user.password, 10);
+        user.password = hashPassword;
+      },
+      beforeUpdate: async (user) => {
+        if (user.password) {
           const hashPassword = await bcrypt.hash(user.password, 10);
           user.password = hashPassword;
-        },
-        beforeUpdate: async (user) => {
-          if (user.password) {
-            const hashPassword = await bcrypt.hash(user.password, 10);
-            user.password = hashPassword;
-          }
         }
-      },
-      sequelize,
-      modelName: 'user' // TODO capitalize and also set it in controller
+      }
+    },
+    instanceMethods: {
+      isValidPassword: async function (password) {
+        try {
+          const isMatch = await bcrypt.compare(password, this.password);
+          return isMatch;
+        } catch (err) {
+          console.log(err.message);
+        }
+      }
     }
-  );
+  }
+);
 
-  User.prototype.isValidPassword = async function (input) {
-    try {
-      const isMatch = await bcrypt.compare(input, this.dataValues.password);
-      return isMatch;
-    } catch (err) {
-      console.log(err.message);
-    }
-  };
-
-  return User;
-};
+module.exports = User;

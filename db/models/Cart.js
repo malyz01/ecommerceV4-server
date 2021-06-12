@@ -2,8 +2,8 @@ const { v4: uuid } = require('uuid');
 const db = require('../index');
 const User = require('./User');
 
-const Profile = db.sequelize.define(
-  'Profile',
+const Cart = db.sequelize.define(
+  'Cart',
   {
     id: {
       type: db.Sequelize.UUID,
@@ -20,13 +20,7 @@ const Profile = db.sequelize.define(
         deferrable: db.Sequelize.Deferrable.INITIALLY_IMMEDIATE
       }
     },
-    firstName: db.Sequelize.STRING,
-    lastName: db.Sequelize.STRING,
-    avatar: {
-      type: db.Sequelize.STRING,
-      defaultValue:
-        'https://cdn2.iconfinder.com/data/icons/web-mobile-2-1/64/user_avatar_admin_web_mobile_business_office-512.png'
-    }
+    type: db.Sequelize.STRING
   },
   {
     freezeTableName: true,
@@ -34,4 +28,4 @@ const Profile = db.sequelize.define(
   }
 );
 
-module.exports = Profile;
+module.exports = Cart;
