@@ -1,39 +1,44 @@
 const { v4: uuid } = require('uuid');
 
-const db = require('../index');
+const { sequelize, Sequelize } = require('../index');
 const Cart = require('./Cart');
 
-const Product = db.sequelize.define(
+const Product = sequelize.define(
   'Product',
   {
     id: {
-      type: db.Sequelize.UUID,
+      type: Sequelize.UUID,
       defaultValue: () => uuid(),
       primaryKey: true
     },
     cartId: {
-      type: db.Sequelize.UUID,
+      type: Sequelize.UUID,
       references: {
         model: Cart,
         key: 'id',
-        deferrable: db.Sequelize.Deferrable.INITIALLY_IMMEDIATE
+        deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
       }
     },
-    name: db.Sequelize.STRING,
-    price: db.Sequelize.DECIMAL,
-    views: db.Sequelize.INTEGER,
+    productCode: { type: Sequelize.STRING, allowNull: false, unique: true },
+    name: { type: Sequelize.STRING, allowNull: false },
+    price: { type: Sequelize.DECIMAL, allowNull: false },
+    views: { type: Sequelize.INTEGER, allowNull: false, defaultValue: 0 },
     orientation: {
-      type: db.Sequelize.ENUM,
+      type: Sequelize.ENUM,
+      allowNull: false,
       values: ['masculine', 'feminine', 'unisex']
     },
     type: {
-      type: db.Sequelize.ENUM,
+      type: Sequelize.ENUM,
+      allowNull: false,
       values: ['t-shirts', 'pants', 'jackets', 'shorts']
     },
     size: {
-      type: db.Sequelize.ENUM,
+      type: Sequelize.ENUM,
+      allowNull: false,
       values: ['xs', 's', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl']
-    }
+    },
+    stock: { type: Sequelize.INTEGER, allowNull: false, defaultValue: 0 }
   },
   {
     freezeTableName: true,

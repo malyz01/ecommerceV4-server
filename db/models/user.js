@@ -1,20 +1,24 @@
 const bcrypt = require('bcrypt');
-const db = require('../index');
+const { sequelize, Sequelize } = require('../index');
 
-const User = db.sequelize.define(
+const User = sequelize.define(
   'User',
   {
     id: {
       allowNull: false,
       primaryKey: true,
-      type: db.Sequelize.UUID,
-      defaultValue: db.Sequelize.UUIDV4
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV4
     },
-    email: db.Sequelize.STRING,
-    password: db.Sequelize.STRING,
+    email: Sequelize.STRING,
+    password: Sequelize.STRING,
     role: {
-      type: db.Sequelize.ENUM,
+      type: Sequelize.ENUM,
       values: ['admin', 'basic']
+    },
+    status: {
+      type: Sequelize.ENUM,
+      values: ['active', 'inactive']
     }
   },
   {

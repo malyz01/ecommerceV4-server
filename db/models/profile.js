@@ -1,29 +1,29 @@
 const { v4: uuid } = require('uuid');
-const db = require('../index');
+const { sequelize, Sequelize } = require('../index');
 const User = require('./User');
 
-const Profile = db.sequelize.define(
+const Profile = sequelize.define(
   'Profile',
   {
     id: {
-      type: db.Sequelize.UUID,
+      type: Sequelize.UUID,
       defaultValue: function () {
         return uuid();
       },
       primaryKey: true
     },
     userId: {
-      type: db.Sequelize.UUID,
+      type: Sequelize.UUID,
       references: {
         model: User,
         key: 'id',
-        deferrable: db.Sequelize.Deferrable.INITIALLY_IMMEDIATE
+        deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
       }
     },
-    firstName: db.Sequelize.STRING,
-    lastName: db.Sequelize.STRING,
+    firstName: Sequelize.STRING,
+    lastName: Sequelize.STRING,
     avatar: {
-      type: db.Sequelize.STRING,
+      type: Sequelize.STRING,
       defaultValue:
         'https://cdn2.iconfinder.com/data/icons/web-mobile-2-1/64/user_avatar_admin_web_mobile_business_office-512.png'
     }
