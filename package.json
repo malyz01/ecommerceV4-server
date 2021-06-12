@@ -1,0 +1,36 @@
+{
+  "name": "budgetier-server",
+  "version": "0.1.0",
+  "description": "- React (Typescript)\r - Node JS\r - Express JS\r - Postgres (Sequelize)\r - GraphQL\r - Material UI",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "rollback": "sequelize-cli db:migrate:undo:all",
+    "migrate": "sequelize-cli db:migrate",
+    "seed": "sequelize-cli db:seed:all",
+    "rbseed": "sequelize-cli db:seed:undo:all",
+    "reset": "run-s rollback migrate seed"
+  },
+  "author": "Malyz",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.18.2",
+    "bcrypt": "^5.0.0",
+    "chalk": "^4.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.4.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "@types/sequelize": "^4.28.9",
+    "nodemon": "^2.0.6",
+    "npm-run-all": "^4.1.5"
+  }
+}
