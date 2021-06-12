@@ -71,3 +71,4 @@ dev.sqlite3
 .vimrc
 Mytest.js
 _Legacy
+docker/
