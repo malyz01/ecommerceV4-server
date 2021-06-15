@@ -3,12 +3,7 @@ const { gql } = require('apollo-server-express');
 module.exports = gql`
   extend type Query {
     productImage(id: ID!): ProductImage
-    productImages: [ProductImage!]!
-  }
-
-  extend type Mutation {
-    productImageCreate(productImageInput: ProductInput!): ProductImage
-    productImageUpdate(productImageInput: ProductInput!): ProductImage
+    productImages: [ProductImage]
   }
 
   input ProductImageInput {
@@ -20,6 +15,7 @@ module.exports = gql`
   }
 
   type ProductImage {
+    id: ID!
     productId: ID!
     name: String!
     url: String!

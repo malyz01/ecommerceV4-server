@@ -25,7 +25,6 @@ module.exports = gql`
 
   type Product {
     id: ID
-    email: String!
     productCode: String!
     name: String!
     price: Float!
@@ -35,7 +34,7 @@ module.exports = gql`
     size: String!
     stock: Int!
     description: String
-    productImage: ProductImage
+    productImage: [ProductImage]
     createdAt: String
     updatedAt: String
   }
