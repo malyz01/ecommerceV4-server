@@ -12,7 +12,14 @@ const Product = sequelize.define(
     },
     productCode: { type: Sequelize.STRING, allowNull: false, unique: true },
     name: { type: Sequelize.STRING, allowNull: false },
-    price: { type: Sequelize.DECIMAL, allowNull: false },
+    price: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      get() {
+        const rawValue = this.getDataValue('price');
+        return Number(rawValue);
+      }
+    },
     views: { type: Sequelize.INTEGER, allowNull: false, defaultValue: 0 },
     orientation: {
       type: Sequelize.ENUM,
