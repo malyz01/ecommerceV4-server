@@ -1,0 +1,62 @@
+[
+  {
+    "id": "90fb3745-184a-4ada-a86a-3004d403b90a",
+    "email": "Haylie53@hotmail.com",
+    "password": "$2b$10$K6.o6apotcQ2Tuw1L3PcL.tpNerGIRXctTNjATPo28kpB0x8YoBLe",
+    "role": "basic"
+  },
+  {
+    "id": "2b7222d6-2140-45e0-a811-e26ebe35a783",
+    "email": "Koby99@yahoo.com",
+    "password": "$2b$10$K6.o6apotcQ2Tuw1L3PcL.tpNerGIRXctTNjATPo28kpB0x8YoBLe",
+    "role": "basic"
+  },
+  {
+    "id": "21a6c34c-8448-4dee-afa5-66372d58837b",
+    "email": "Dorthy77@gmail.com",
+    "password": "$2b$10$K6.o6apotcQ2Tuw1L3PcL.tpNerGIRXctTNjATPo28kpB0x8YoBLe",
+    "role": "basic"
+  },
+  {
+    "id": "ebaaea95-037a-4f37-bd37-4f17b2e1826c",
+    "email": "Darrell.Senger@gmail.com",
+    "password": "$2b$10$K6.o6apotcQ2Tuw1L3PcL.tpNerGIRXctTNjATPo28kpB0x8YoBLe",
+    "role": "basic"
+  },
+  {
+    "id": "7009617f-6408-4148-a209-23247aa0fdcb",
+    "email": "Ava.Bahringer@gmail.com",
+    "password": "$2b$10$K6.o6apotcQ2Tuw1L3PcL.tpNerGIRXctTNjATPo28kpB0x8YoBLe",
+    "role": "basic"
+  },
+  {
+    "id": "1929413f-e3e7-438a-b948-64537c20edd0",
+    "email": "Trenton.Monahan45@gmail.com",
+    "password": "$2b$10$K6.o6apotcQ2Tuw1L3PcL.tpNerGIRXctTNjATPo28kpB0x8YoBLe",
+    "role": "basic"
+  },
+  {
+    "id": "dcb90a06-0002-4c8b-995b-e5c5c5606d33",
+    "email": "Moises.Kshlerin65@gmail.com",
+    "password": "$2b$10$K6.o6apotcQ2Tuw1L3PcL.tpNerGIRXctTNjATPo28kpB0x8YoBLe",
+    "role": "admin"
+  },
+  {
+    "id": "e2c6a78e-e8dd-4a2a-8e84-685e1a78fa4a",
+    "email": "Furman.Beahan@hotmail.com",
+    "password": "$2b$10$K6.o6apotcQ2Tuw1L3PcL.tpNerGIRXctTNjATPo28kpB0x8YoBLe",
+    "role": "admin"
+  },
+  {
+    "id": "08727e2c-f558-4f56-b970-e902f440b724",
+    "email": "Haley96@gmail.com",
+    "password": "$2b$10$K6.o6apotcQ2Tuw1L3PcL.tpNerGIRXctTNjATPo28kpB0x8YoBLe",
+    "role": "admin"
+  },
+  {
+    "id": "12cd4437-6760-4d4c-af3c-2356351a7ef0",
+    "email": "Bartholome69@yahoo.com",
+    "password": "$2b$10$K6.o6apotcQ2Tuw1L3PcL.tpNerGIRXctTNjATPo28kpB0x8YoBLe",
+    "role": "basic"
+  }
+]
