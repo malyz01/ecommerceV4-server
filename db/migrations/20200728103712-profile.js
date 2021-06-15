@@ -23,8 +23,8 @@ module.exports = {
         defaultValue:
           'https://cdn2.iconfinder.com/data/icons/web-mobile-2-1/64/user_avatar_admin_web_mobile_business_office-512.png'
       },
-      createdAt: Sequelize.DATE,
-      updatedAt: Sequelize.DATE
+      createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
+      updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.NOW }
     });
   },
 

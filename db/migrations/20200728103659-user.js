@@ -29,8 +29,8 @@ module.exports = {
         values: ['active', 'inactive'],
         defaultValue: 'active'
       },
-      createdAt: Sequelize.DATE,
-      updatedAt: Sequelize.DATE
+      createdAt: { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
+      updatedAt: { type: Sequelize.DATE, defaultValue: Sequelize.NOW }
     });
   },
 
